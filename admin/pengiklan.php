@@ -94,7 +94,8 @@ unset($_SESSION['id_pengiklan']);
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-user" aria-hidden="true"></i>
-                <?php echo $_SESSION['username']; ?>
+                <?php $user = $_SESSION['username']; 
+                echo $user ?>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Lihat</a>
