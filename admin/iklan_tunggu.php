@@ -33,9 +33,9 @@ unset($_SESSION['id_pengiklan']);
         <a href="gambar.php" class="list-group-item list-group-item-action bg-light">Gambar Slide</a>
         <a href="iklan.php" class="list-group-item list-group-item-action bg-light">Paket Iklan
           <span class="badge badge-default badge-pill"><?php
-            $paket = mysqli_query($conc, "SELECT * FROM iklan");
-            $jumlah_paket = mysqli_num_rows($paket);
-            echo $jumlah_paket;
+            $result = mysqli_query($conc, "SELECT * FROM iklan");
+            $JumlahData = mysqli_num_rows($result);
+            echo $JumlahData;
             ?>
           </span>
         </a>
