@@ -33,7 +33,7 @@ unset($_SESSION['id_pengiklan']);
         <a href="gambar.php" class="list-group-item list-group-item-action bg-light">Gambar Slide</a>
         <a href="iklan.php" class="list-group-item list-group-item-action bg-light">Paket Iklan
           <span class="badge badge-default badge-pill"><?php
-            $result = mysql_query($conc, "SELECT * FROM iklan");
+            $result = mysqli_query($conc, "SELECT * FROM iklan");
             $JumlahData = mysql_num_rows($result);
             echo $JumlahData;
             ?>
@@ -41,7 +41,7 @@ unset($_SESSION['id_pengiklan']);
         </a>
         <a href="iklan_masuk.php" class="list-group-item list-group-item-action bg-light">Iklan Masuk
           <span class="badge badge-default badge-pill"><?php
-            $result = mysql_query($conc, "SELECT * FROM transaksi INNER JOIN user_iklan ON transaksi.id_pengiklan=user_iklan.id_pengiklan INNER JOIN tayang_iklan ON transaksi.id_tayang=tayang_iklan.id_tayang INNER JOIN iklan ON transaksi.id_iklan=iklan.id_iklan WHERE transaksi.status='Baru'");
+            $result = mysqli_query($conc, "SELECT * FROM transaksi INNER JOIN user_iklan ON transaksi.id_pengiklan=user_iklan.id_pengiklan INNER JOIN tayang_iklan ON transaksi.id_tayang=tayang_iklan.id_tayang INNER JOIN iklan ON transaksi.id_iklan=iklan.id_iklan WHERE transaksi.status='Baru'");
             $JumlahData = mysql_num_rows($result);
             echo $JumlahData;
             ?>
@@ -49,7 +49,7 @@ unset($_SESSION['id_pengiklan']);
         </a>
         <a href="iklan_tunggu.php" class="list-group-item list-group-item-action bg-light">Iklan Tunggu
           <span class="badge badge-default badge-pill"><?php
-            $result = mysql_query($conc, "SELECT * FROM transaksi INNER JOIN user_iklan ON transaksi.id_pengiklan=user_iklan.id_pengiklan INNER JOIN tayang_iklan ON transaksi.id_tayang=tayang_iklan.id_tayang INNER JOIN iklan ON transaksi.id_iklan=iklan.id_iklan WHERE transaksi.status='Sudah Bayar' ORDER BY waktu_bayar asc");
+            $result = mysqli_query($conc, "SELECT * FROM transaksi INNER JOIN user_iklan ON transaksi.id_pengiklan=user_iklan.id_pengiklan INNER JOIN tayang_iklan ON transaksi.id_tayang=tayang_iklan.id_tayang INNER JOIN iklan ON transaksi.id_iklan=iklan.id_iklan WHERE transaksi.status='Sudah Bayar' ORDER BY waktu_bayar asc");
             $JumlahData = mysql_num_rows($result);
             echo $JumlahData;
             ?>
@@ -59,7 +59,7 @@ unset($_SESSION['id_pengiklan']);
         <a href="iklan_selesai.php" class="list-group-item list-group-item-action bg-light">Iklan Selesai
           <span class="badge badge-default badge-pill"><?php
             $result = mysqli_query($conc, "SELECT * FROM transaksi INNER JOIN user_iklan ON transaksi.id_pengiklan=user_iklan.id_pengiklan INNER JOIN tayang_iklan ON transaksi.id_tayang=tayang_iklan.id_tayang INNER JOIN iklan ON transaksi.id_iklan=iklan.id_iklan WHERE transaksi.status='Selesai' ORDER BY tanggal_tayang desc");
-            $JumlahData = mysqli_num_rows($result);
+            $JumlahData = mysql_num_rows($result);
             echo $JumlahData;
             ?>
           </span>
