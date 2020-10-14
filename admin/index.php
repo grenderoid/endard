@@ -33,24 +33,24 @@ unset($_SESSION['id_pengiklan']);
         <a href="gambar.php" class="list-group-item list-group-item-action bg-light">Gambar Slide</a>
         <a href="iklan.php" class="list-group-item list-group-item-action bg-light">Paket Iklan
           <span class="badge badge-default badge-pill"><?php
-            $result = mysqli_query($conc, "SELECT * FROM iklan");
-            $JumlahData = mysqli_num_rows($result);
+            $result = mysql_query($conc, "SELECT * FROM iklan");
+            $JumlahData = mysql_num_rows($result);
             echo $JumlahData;
             ?>
           </span>
         </a>
         <a href="iklan_masuk.php" class="list-group-item list-group-item-action bg-light">Iklan Masuk
           <span class="badge badge-default badge-pill"><?php
-            $result = mysqli_query($conc, "SELECT * FROM transaksi INNER JOIN user_iklan ON transaksi.id_pengiklan=user_iklan.id_pengiklan INNER JOIN tayang_iklan ON transaksi.id_tayang=tayang_iklan.id_tayang INNER JOIN iklan ON transaksi.id_iklan=iklan.id_iklan WHERE transaksi.status='Baru'");
-            $JumlahData = mysqli_num_rows($result);
+            $result = mysql_query($conc, "SELECT * FROM transaksi INNER JOIN user_iklan ON transaksi.id_pengiklan=user_iklan.id_pengiklan INNER JOIN tayang_iklan ON transaksi.id_tayang=tayang_iklan.id_tayang INNER JOIN iklan ON transaksi.id_iklan=iklan.id_iklan WHERE transaksi.status='Baru'");
+            $JumlahData = mysql_num_rows($result);
             echo $JumlahData;
             ?>
           </span>
         </a>
         <a href="iklan_tunggu.php" class="list-group-item list-group-item-action bg-light">Iklan Tunggu
           <span class="badge badge-default badge-pill"><?php
-            $result = mysqli_query($conc, "SELECT * FROM transaksi INNER JOIN user_iklan ON transaksi.id_pengiklan=user_iklan.id_pengiklan INNER JOIN tayang_iklan ON transaksi.id_tayang=tayang_iklan.id_tayang INNER JOIN iklan ON transaksi.id_iklan=iklan.id_iklan WHERE transaksi.status='Sudah Bayar' ORDER BY waktu_bayar asc");
-            $JumlahData = mysqli_num_rows($result);
+            $result = mysql_query($conc, "SELECT * FROM transaksi INNER JOIN user_iklan ON transaksi.id_pengiklan=user_iklan.id_pengiklan INNER JOIN tayang_iklan ON transaksi.id_tayang=tayang_iklan.id_tayang INNER JOIN iklan ON transaksi.id_iklan=iklan.id_iklan WHERE transaksi.status='Sudah Bayar' ORDER BY waktu_bayar asc");
+            $JumlahData = mysql_num_rows($result);
             echo $JumlahData;
             ?>
           </span>
