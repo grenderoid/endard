@@ -126,7 +126,7 @@ unset($_SESSION['id_pengiklan']);
 
               <?php
     
-                $page = (isset($_GET['page']))? (int) $_GET['page'] : 1;
+                $page = (isset(filter_input(INPUT_GET, 'page')))? (int) $_GET['page'] : 1;
                 $limit = 8;
                 $limitStart = ($page - 1) * $limit;
                 $result1 = mysqli_query($conc, "SELECT * FROM transaksi INNER JOIN user_iklan ON transaksi.id_pengiklan=user_iklan.id_pengiklan INNER JOIN tayang_iklan ON transaksi.id_tayang=tayang_iklan.id_tayang INNER JOIN iklan ON transaksi.id_iklan=iklan.id_iklan WHERE transaksi.status='Baru' ORDER BY id_transaksi desc LIMIT ".$limitStart.",".$limit); 
