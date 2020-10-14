@@ -67,8 +67,7 @@ unset($_SESSION['id_pengiklan']);
         <a href="pengiklan.php" class="list-group-item list-group-item-action bg-light">Pengiklan
           <span class="badge badge-default badge-pill"><?php
             $result = mysqli_query($conc, "SELECT * FROM user_iklan INNER JOIN provinces ON user_iklan.provinsi=provinces.id INNER JOIN regencies ON user_iklan.kota=regencies.id INNER JOIN districts ON user_iklan.kecamatan=districts.id WHERE aktif = '1' ORDER BY username asc");
-            $JumlahData = mysqli_num_rows($result);
-            echo $JumlahData;
+            echo mysqli_num_rows($result);
             ?>
           </span>
         </a>
