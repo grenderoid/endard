@@ -41,8 +41,7 @@ unset($_SESSION['id_pengiklan']);
         </a>
         <a href="iklan_masuk.php" class="list-group-item list-group-item-action bg-light">Iklan Masuk
           <span class="badge badge-default badge-pill"><?php
-            $masuk = "SELECT * FROM transaksi INNER JOIN user_iklan ON transaksi.id_pengiklan=user_iklan.id_pengiklan INNER JOIN tayang_iklan ON transaksi.id_tayang=tayang_iklan.id_tayang INNER JOIN iklan ON transaksi.id_iklan=iklan.id_iklan WHERE transaksi.status='Baru'";
-            $result = mysqli_query($conc, $masuk);
+            $result = mysqli_query($conc, "SELECT * FROM transaksi INNER JOIN user_iklan ON transaksi.id_pengiklan=user_iklan.id_pengiklan INNER JOIN tayang_iklan ON transaksi.id_tayang=tayang_iklan.id_tayang INNER JOIN iklan ON transaksi.id_iklan=iklan.id_iklan WHERE transaksi.status='Baru'");
             $JumlahData = mysqli_num_rows($result);
             echo $JumlahData;
             ?>
