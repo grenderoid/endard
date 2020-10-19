@@ -6,7 +6,8 @@ $database = "dbiklan";
 
 $conc = new mysqli($servername, $username, $password, $database);
 
-if ($conc->connect_error) {
-  die("Connection failed: " . $conc->connect_error);
+if (mysqli_connect_errno()) {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  exit();
 }
 ?>
