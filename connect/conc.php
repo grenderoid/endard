@@ -1,8 +1,12 @@
 <?php
-	$conc = mysqli_connect('localhost', 'root', '', 'dbiklan');
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "dbiklan";
 
-	if ($conc->connect_error) {
-	    die("Connection failed: " . $conc->connect_error);
-	}
-	
+$conc = new mysqli($servername, $username, $password, $database);
+
+if ($conc->connect_error) {
+	die("Connection failed: " . $conc->connect_error);
+}
 ?>
