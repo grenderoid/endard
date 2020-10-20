@@ -12,7 +12,7 @@ $mail->Password = 'OneOkRock23';
 $mail->SMTPSecure = 'tls';
 $mail->Port = 587;
 $mail->setFrom('untukiklanbnews@gmail.com', 'Iklan Bnews');
-$mail->addAddress($_POST['email'], $_POST['username']);
+$mail->addAddress($email, $username);
 $mail->isHTML(true);
 $mail->Subject = "(Aktivasi pendaftaran)";
 $mail->Body = "Selamat, anda telah berhasil membuat akun. Tahap selanjutnya adalah mengaktifkan akun anda. Untuk mengaktifkannya silahkan klik atau copy link berikut ini.
