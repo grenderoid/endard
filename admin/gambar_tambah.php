@@ -2,7 +2,7 @@
 
 date_default_timezone_set('Asia/Jakarta');
 
-if (isset($_POST['tambah_gambar'])) {
+if (isset($_POST['tambah_gambar']) && !empty($_POST['level']) && !empty($_FILES['gambar']['tmp_name'])) {
 
   $level = $_POST['level'];
   $temp = $_FILES['gambar']['tmp_name'];
