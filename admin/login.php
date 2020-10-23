@@ -1,17 +1,6 @@
 <?php 
 session_start();
 
-if (isset($_GET['pesan'])) {
-	if ($_GET['pesan'] == "gagal") {
-?>
-		<div class="alert alert-danger alert-dismissible">
-		<a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-		<strong>Gagal!</strong> Username atau password yang anda gunakan salah.
-		</div>
-<?php
-	}
-}
-
 if (isset($_SESSION['id_admin']) && $_SESSION['level'] == 'Admin'){
     header("location:index.php");
 }
