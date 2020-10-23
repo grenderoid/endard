@@ -3,10 +3,12 @@ session_start();
 
 if (isset($_GET['pesan'])) {
 	if ($_GET['pesan'] == "gagal") {
-		echo "<div class='alert alert-danger alert-dismissible'>
-		<a href='' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+?>
+		<div class="alert alert-danger alert-dismissible">
+		<a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 		<strong>Gagal!</strong> Username atau password yang anda gunakan salah.
-		</div>";
+		</div>
+<?php
 	}
 }
 
