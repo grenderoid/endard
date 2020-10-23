@@ -4,21 +4,11 @@ date_default_timezone_set('Asia/Jakarta');
 
 if (isset($_POST['tambah_gambar'])) {
 
-  if (!empty($_POST['level'])) {
-    $level = $_POST['level'];
-  }
-  if (!empty($_FILES['gambar']['tmp_name'])) {
-    $temp = $_FILES['gambar']['tmp_name'];
-  }
-  if (!empty($_FILES['gambar']['name'])) {
-    $name = rand(0,9999).$_FILES['gambar']['name'];
-  }
-  if (!empty($_FILES['gambar']['size'])) {
-    $size = $_FILES['gambar']['size'];
-  }
-  if (!empty($_FILES['gambar']['type'])) {
-    $type = $_FILES['gambar']['type'];
-  }
+  $level = $_POST['level'];
+  $temp = $_FILES['gambar']['tmp_name'];
+  $name = rand(0,9999).$_FILES['gambar']['name'];
+  $size = $_FILES['gambar']['size'];
+  $type = $_FILES['gambar']['type'];
   $folder = "gambar_slide/";
   list($width,$height) = getimagesize($temp);
   $waktu = date("Y-m-d");
